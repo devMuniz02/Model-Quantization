@@ -27,7 +27,8 @@
 - **Flexible Configuration**: Customizable compute and storage data types
 - **Local Saving**: Option to save quantized models locally
 - **Model Card Generation**: Automatic creation of detailed model cards for quantized models
-- **Jupyter Notebook Support**: Interactive notebook for testing and experimentation
+- **Jupyter Notebook Support**: Interactive notebooks for testing and experimentation
+- **Automated Trending Model Quantization**: Batch quantization of top trending models from Hugging Face
 
 ## 🚀 Installation
 
@@ -62,10 +63,13 @@ pip install -r requirements.txt
 Model-Quantization/
 ├── assets/                 # Static assets (images, icons, etc.)
 ├── data/                   # Data files and datasets
+│   └── quantized_models.json # JSON list of already quantized models
 ├── docs/                   # Documentation files
 ├── notebooks/              # Jupyter notebooks for analysis and prototyping
-│   └── initial_test.ipynb  # Interactive quantization testing notebook
+│   ├── initial_test.ipynb  # Interactive quantization testing notebook
+│   └── trendinghfmodels.ipynb # Analysis of trending Hugging Face models
 ├── scripts/                # Utility scripts and automation tools
+│   └── auto_quantize_trending.py # Automated quantization of trending models
 ├── src/                    # Source code
 │   └── quantize_terminal.py # Main terminal-based quantization script
 ├── tests/                  # Unit tests and test files
@@ -77,10 +81,12 @@ Model-Quantization/
 ### Directory Descriptions
 
 - **`assets/`**: Store static files like images, icons, fonts, and other media assets.
-- **`data/`**: Place datasets, input files, and any data-related resources here.
+- **`data/`**: Place datasets, input files, and any data-related resources here. Contains `quantized_models.json` for tracking quantized models.
 - **`docs/`**: Additional documentation, guides, and project-related files.
 - **`notebooks/`**: Jupyter notebooks for data exploration, prototyping, and demonstrations.
-- **`scripts/`**: Utility scripts for automation, setup, deployment, or maintenance tasks.
+  - `initial_test.ipynb`: Interactive quantization testing notebook
+  - `trendinghfmodels.ipynb`: Analysis and exploration of trending Hugging Face models
+- **`scripts/`**: Utility scripts for automation, setup, deployment, or maintenance tasks. Includes `auto_quantize_trending.py` for automated quantization.
 - **`src/`**: Main source code for the project, including the quantization script.
 - **`tests/`**: Unit tests, integration tests, and test-related files.
 
@@ -113,12 +119,30 @@ python src/quantize_terminal.py --reset-token
 python src/quantize_terminal.py --default
 ```
 
-### Jupyter Notebook
+### Automated Quantization of Trending Models
 
-For interactive testing and experimentation:
+Run the automated script to quantize trending models:
 
 ```bash
-jupyter notebook notebooks/initial_test.ipynb
+python scripts/auto_quantize_trending.py
+```
+
+This script will:
+1. Fetch the top 50 trending models from Hugging Face
+2. Filter models with < 10B parameters (excluding vision, multimodal, etc.)
+3. Check against already quantized models in `data/quantized_models.json`
+4. Quantize new models using default 4-bit NF4 quantization
+5. Upload quantized models to your Hugging Face Hub
+6. Update the JSON list with newly quantized models
+
+### Command Line Options for Automated Script
+
+```bash
+# Run with Hugging Face token
+python scripts/auto_quantize_trending.py --hf-token YOUR_TOKEN
+
+# Limit the number of models to quantize
+python scripts/auto_quantize_trending.py --max-models 10
 ```
 
 ### Advanced Usage
