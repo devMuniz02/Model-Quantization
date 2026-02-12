@@ -1,60 +1,58 @@
+# Core dependencies for model quantization
 # For installing the latest pre-release versions of PyTorch with CUDA 13.0 support
-# --pre
-# --extra-index-url https://download.pytorch.org/whl/cu130
+--pre
+--extra-index-url https://download.pytorch.org/whl/cu130
 
-# torch
-# torchvision
+torch
+torchvision
+transformers
+huggingface_hub
+bitsandbytes
+accelerate
 
-# Data Science & Machine Learning
-# numpy
-# pandas
-# scikit-learn
-# matplotlib
-# seaborn
-# jupyter
-# notebook
-
-# Web Development
-# flask
-# django
-# fastapi
-# uvicorn
-# gunicorn
-
-# Testing & Quality Assurance
-# pytest
-# pytest-cov
-# black
-# flake8
-# mypy
-# pre-commit
+# Gradio app dependencies
+gradio
+gradio_huggingfacehub_search
 
 # Utilities
-# python-dotenv
-# click
-# tqdm
-# rich
+python-dotenv
+tqdm
+rich
+
+# Data Science & Machine Learning
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+
+# Web Development
+flask
+fastapi
+uvicorn
+
+# Testing & Quality Assurance
+pytest
+pytest-cov
+black
+flake8
+mypy
+pre-commit
 
 # Database
-# sqlalchemy
-# psycopg2-binary
-# pymongo
+sqlalchemy
 
 # API Clients
-# httpx
-# aiohttp
-# python-telegram-bot
+httpx
 
 # Image Processing
-# pillow
-# opencv-python
+pillow
 
 # Natural Language Processing
-# transformers
-# datasets
-# tokenizers
+datasets
+tokenizers
 
 # Development Tools
-# ipython
-# jupyterlab
-# sphinx
+ipython
+jupyterlab
+sphinx

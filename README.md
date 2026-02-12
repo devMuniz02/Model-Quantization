@@ -1,10 +1,10 @@
-# [Project Name]
+# Model Quantization
 
-> [Brief description of the project - one or two sentences]
+> Effortlessly quantize and deploy Hugging Face models. This repo provides a streamlined pipeline to convert any HF model into a compressed format and upload it directly to your HF profile. Ideal for optimizing Large Language Models (LLMs) for resource-constrained environments.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues/devMuniz02/[repo-name])](https://github.com/devMuniz02/[repo-name]/issues)
-[![GitHub stars](https://img.shields.io/github/stars/devMuniz02/[repo-name])](https://github.com/devMuniz02/[repo-name]/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/devMuniz02/Model-Quantization)](https://github.com/devMuniz02/Model-Quantization/issues)
+[![GitHub stars](https://img.shields.io/github/stars/devMuniz02/Model-Quantization)](https://github.com/devMuniz02/Model-Quantization/stargazers)
 
 ## 📋 Table of Contents
 
@@ -19,70 +19,57 @@
 
 ## ✨ Features
 
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
-- [Add more features as needed]
+- **Terminal-based Quantization**: Interactive command-line interface for easy model quantization
+- **4-bit Quantization Support**: NF4 and FP4 quantization types for optimal compression
+- **Double Quantization**: Enhanced compression with double quantization option
+- **Memory Footprint Analysis**: Automatic calculation of original vs quantized model sizes
+- **Hugging Face Integration**: Direct upload to Hugging Face Hub with generated model cards
+- **Flexible Configuration**: Customizable compute and storage data types
+- **Local Saving**: Option to save quantized models locally
+- **Model Card Generation**: Automatic creation of detailed model cards for quantized models
+- **Jupyter Notebook Support**: Interactive notebook for testing and experimentation
 
 ## 🚀 Installation
 
 ### Prerequisites
 
-- [List prerequisites, e.g., Node.js v16+, Python 3.8+, etc.]
+- Python 3.8+
+- Git
+- Hugging Face account (for uploading models)
 
 ### Installation Steps
 
 ```bash
 # Clone the repository
-git clone https://github.com/devMuniz02/[repo-name].git
+git clone https://github.com/devMuniz02/Model-Quantization.git
 
 # Navigate to the project directory
-cd [repo-name]
+cd Model-Quantization
 
 # Install dependencies
-npm install
-# or
 pip install -r requirements.txt
-# or
-[other installation commands]
 ```
 
-## � Repository Setup
+### Hardware Requirements
 
-After cloning this template repository, run the setup script to automatically populate the README with your repository information:
-
-### Prerequisites for Setup Script
-- Python 3.6+
-- Git configured with remote origin
-
-### Setup Steps
-```bash
-# Install Python dependencies
-pip install -r requirements.txt
-
-# Run the setup script
-python update_readme.py
-```
-
-This script will:
-- Fetch repository information from GitHub API
-- Update the project name and description in README.md
-- Extract the repository name from the git remote URL
-
-**Note:** Make sure your repository has a remote origin set and is pushed to GitHub before running the script.
+- **GPU**: NVIDIA GPU with CUDA support (recommended for faster quantization)
+- **RAM**: At least 8GB (16GB+ recommended for large models)
+- **Storage**: Sufficient space for original and quantized models
 
 ## 📁 Project Structure
 
 ```
-[repo-name]/
+Model-Quantization/
 ├── assets/                 # Static assets (images, icons, etc.)
 ├── data/                   # Data files and datasets
 ├── docs/                   # Documentation files
 ├── notebooks/              # Jupyter notebooks for analysis and prototyping
+│   └── initial_test.ipynb  # Interactive quantization testing notebook
 ├── scripts/                # Utility scripts and automation tools
 ├── src/                    # Source code
+│   └── quantize_terminal.py # Main terminal-based quantization script
 ├── tests/                  # Unit tests and test files
-├── LICENSE                 # License file
+├── LICENSE                 # MIT License file
 ├── README.md               # Project documentation
 └── requirements.txt        # Python dependencies
 ```
@@ -94,25 +81,108 @@ This script will:
 - **`docs/`**: Additional documentation, guides, and project-related files.
 - **`notebooks/`**: Jupyter notebooks for data exploration, prototyping, and demonstrations.
 - **`scripts/`**: Utility scripts for automation, setup, deployment, or maintenance tasks.
-- **`src/`**: Main source code for the project.
+- **`src/`**: Main source code for the project, including the quantization script.
 - **`tests/`**: Unit tests, integration tests, and test-related files.
 
-## �📖 Usage
+## 📖 Usage
 
 ### Basic Usage
 
+Run the quantization script interactively:
+
 ```bash
-# Example command
-[command example]
+python src/quantize_terminal.py
+```
+
+The script will guide you through:
+1. Hugging Face authentication (if not already logged in)
+2. Model selection
+3. Quantization configuration
+4. Output options (local save and/or Hub upload)
+
+### Command Line Options
+
+```bash
+# Set Hugging Face token
+python src/quantize_terminal.py --set-token YOUR_TOKEN
+
+# Reset Hugging Face token
+python src/quantize_terminal.py --reset-token
+
+# Use default settings for quick quantization
+python src/quantize_terminal.py --default
+```
+
+### Jupyter Notebook
+
+For interactive testing and experimentation:
+
+```bash
+jupyter notebook notebooks/initial_test.ipynb
 ```
 
 ### Advanced Usage
 
-[Provide more detailed usage examples, code snippets, or screenshots]
+The script supports various quantization configurations:
+
+- **Quantization Types**: NF4 (recommended) or FP4
+- **Double Quantization**: Reduces memory footprint further
+- **Compute Dtypes**: float16, bfloat16, float32
+- **Storage Dtypes**: float16, float32, int8, uint8, bfloat16
+
+### Example Output
+
+```
+🤗 BitsAndBytes Model Quantizer
+========================================
+Logged in as: your-username
+
+Configuration:
+  Model: microsoft/DialoGPT-medium
+  Quantization type: nf4
+  Double quantization: True
+  Compute dtype: bfloat16
+  Storage dtype: uint8
+  Output directory: quantized_model
+
+📦 Original Footprint (FP32): 345.67 MB
+✅ Quantized: 123.45 MB
+📉 Actual Reduction: 64.3%
+
+Model saved to: C:\path\to\Model-Quantization\quantized_model
+Successfully pushed to https://huggingface.co/your-username/DialoGPT-medium-bnb-4bit-nf4-dq
+```
 
 ## ⚙️ Configuration
 
-[Explain configuration options, environment variables, config files, etc.]
+### Quantization Parameters
+
+| Parameter | Options | Default | Description |
+|-----------|---------|---------|-------------|
+| Quantization Type | `nf4`, `fp4` | `nf4` | 4-bit quantization algorithm |
+| Double Quantization | `True`, `False` | `True` | Enables double quantization for better compression |
+| Compute Dtype | `float16`, `bfloat16`, `float32` | `bfloat16` | Dtype for computations during inference |
+| Storage Dtype | `float16`, `float32`, `int8`, `uint8`, `bfloat16` | `uint8` | Dtype for storing quantized weights |
+
+### Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+HF_TOKEN=your_huggingface_token_here
+```
+
+### Model Compatibility
+
+The script automatically detects model types:
+- **Causal LM**: GPT-style models (AutoModelForCausalLM)
+- **Masked LM**: BERT-style models (AutoModelForMaskedLM)
+
+### Memory Considerations
+
+- **GPU Memory**: Ensure sufficient VRAM for model loading
+- **System RAM**: Large models may require significant RAM during quantization
+- **Storage**: Quantized models are typically 60-75% smaller than originals
 
 ## 🤝 Contributing
 
@@ -128,20 +198,25 @@ Contributions are welcome! Please follow these steps:
 
 ```bash
 # Install development dependencies
-npm install --dev
-# or
-pip install -r requirements-dev.txt
+pip install -r requirements.txt
+
+# Install additional dev tools
+pip install black flake8 pytest
 
 # Run tests
-npm test
-# or
-python -m pytest
+pytest
 
 # Run linting
-npm run lint
-# or
-black .
+black src/
+flake8 src/
 ```
+
+### Code Style
+
+- Follow PEP 8 style guidelines
+- Use type hints for function parameters and return values
+- Write docstrings for all functions and classes
+- Keep functions focused and modular
 
 ## 📄 License
 
@@ -153,7 +228,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Hugging Face:** [https://huggingface.co/manu02](https://huggingface.co/manu02)
 - **Portfolio:** [https://devmuniz02.github.io/](https://devmuniz02.github.io/)
 
-Project Link: [https://github.com/devMuniz02/[repo-name]](https://github.com/devMuniz02/[repo-name])
+Project Link: [https://github.com/devMuniz02/Model-Quantization](https://github.com/devMuniz02/Model-Quantization)
 
 ---
 
