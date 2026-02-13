@@ -67,6 +67,7 @@ Model-Quantization/
 ├── docs/                   # Documentation files
 ├── notebooks/              # Jupyter notebooks for analysis and prototyping
 │   ├── initial_test.ipynb  # Interactive quantization testing notebook
+│   ├── quant_scratch.ipynb # Scratch notebook for quantization experiments
 │   └── trendinghfmodels.ipynb # Analysis of trending Hugging Face models
 ├── scripts/                # Utility scripts and automation tools
 │   └── auto_quantize_trending.py # Automated quantization of trending models
