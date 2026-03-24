@@ -1,23 +1,52 @@
+[![ArXiv](https://img.shields.io/badge/ArXiv-2512.16841-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2512.16841)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-devmuniz-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/devmuniz)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-devMuniz02-181717?logo=github&logoColor=white)](https://github.com/devMuniz02)
+[![Portfolio](https://img.shields.io/badge/Portfolio-devmuniz02.github.io-0F172A?logo=googlechrome&logoColor=white)](https://devmuniz02.github.io/)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-manu02-FFD21E?logoColor=black)](https://huggingface.co/manu02)
+
 # Model Quantization
 
 > Effortlessly quantize and deploy Hugging Face models. This repo provides a streamlined pipeline to convert any HF model into a compressed format and upload it directly to your HF profile. Ideal for optimizing Large Language Models (LLMs) for resource-constrained environments.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues/devMuniz02/Model-Quantization)](https://github.com/devMuniz02/Model-Quantization/issues)
-[![GitHub stars](https://img.shields.io/github/stars/devMuniz02/Model-Quantization)](https://github.com/devMuniz02/Model-Quantization/stargazers)
+- [Features](#features) - [Installation](#installation) - [Repository Setup](#repository-setup) - [Usage](#usage) - [Configuration](#configuration) - [Contributing](#contributing) - [License](#license) - [Contact](#contact)
 
-## 📋 Table of Contents
+## Overview
 
-- [Features](#features)
-- [Installation](#installation)
-- [Repository Setup](#repository-setup)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+Effortlessly quantize and deploy Hugging Face models. This repo provides a streamlined pipeline to convert any HF model into a compressed format and upload it directly to your HF profile. Ideal for optimizing Large Language Models (LLMs) for resource-constrained environments.
 
-## ✨ Features
+## Repository Structure
+
+| Path | Description |
+| --- | --- |
+| `notebooks/` | Exploratory notebooks and experiment walkthroughs. |
+| `scripts/` | Top-level project directory containing repository-specific resources. |
+| `src/` | Primary source code for the application or library. |
+| `.gitignore` | Top-level file included in the repository. |
+| `LICENSE` | Repository license information. |
+| `README.md` | Primary project documentation. |
+| `requirements.txt` | Python dependency specification for local setup. |
+
+## Getting Started
+
+1. Clone the repository.
+
+   ```bash
+   git clone https://github.com/devMuniz02/Model-Quantization.git
+   cd Model-Quantization
+   ```
+
+2. Prepare the local environment.
+
+Install Python dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Run or inspect the project entry point.
+
+Use the project-specific scripts or notebooks in the repository root to run the workflow.
+
+## Features
 
 - **Terminal-based Quantization**: Interactive command-line interface for easy model quantization
 - **4-bit Quantization Support**: NF4 and FP4 quantization types for optimal compression
@@ -30,7 +59,7 @@
 - **Jupyter Notebook Support**: Interactive notebooks for testing and experimentation
 - **Automated Trending Model Quantization**: Batch quantization of top trending models from Hugging Face
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -57,41 +86,7 @@ pip install -r requirements.txt
 - **RAM**: At least 8GB (16GB+ recommended for large models)
 - **Storage**: Sufficient space for original and quantized models
 
-## 📁 Project Structure
-
-```
-Model-Quantization/
-├── assets/                 # Static assets (images, icons, etc.)
-├── data/                   # Data files and datasets
-│   └── quantized_models.json # JSON list of already quantized models
-├── docs/                   # Documentation files
-├── notebooks/              # Jupyter notebooks for analysis and prototyping
-│   ├── initial_test.ipynb  # Interactive quantization testing notebook
-│   ├── quant_scratch.ipynb # Scratch notebook for quantization experiments
-│   └── trendinghfmodels.ipynb # Analysis of trending Hugging Face models
-├── scripts/                # Utility scripts and automation tools
-│   └── auto_quantize_trending.py # Automated quantization of trending models
-├── src/                    # Source code
-│   └── quantize_terminal.py # Main terminal-based quantization script
-├── tests/                  # Unit tests and test files
-├── LICENSE                 # MIT License file
-├── README.md               # Project documentation
-└── requirements.txt        # Python dependencies
-```
-
-### Directory Descriptions
-
-- **`assets/`**: Store static files like images, icons, fonts, and other media assets.
-- **`data/`**: Place datasets, input files, and any data-related resources here. Contains `quantized_models.json` for tracking quantized models.
-- **`docs/`**: Additional documentation, guides, and project-related files.
-- **`notebooks/`**: Jupyter notebooks for data exploration, prototyping, and demonstrations.
-  - `initial_test.ipynb`: Interactive quantization testing notebook
-  - `trendinghfmodels.ipynb`: Analysis and exploration of trending Hugging Face models
-- **`scripts/`**: Utility scripts for automation, setup, deployment, or maintenance tasks. Includes `auto_quantize_trending.py` for automated quantization.
-- **`src/`**: Main source code for the project, including the quantization script.
-- **`tests/`**: Unit tests, integration tests, and test-related files.
-
-## 📖 Usage
+## Usage
 
 ### Basic Usage
 
@@ -178,7 +173,68 @@ Model saved to: C:\path\to\Model-Quantization\quantized_model
 Successfully pushed to https://huggingface.co/your-username/DialoGPT-medium-bnb-4bit-nf4-dq
 ```
 
-## ⚙️ Configuration
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Links:**
+- **GitHub:** [https://github.com/devMuniz02/](https://github.com/devMuniz02/)
+- **LinkedIn:** [https://www.linkedin.com/in/devmuniz](https://www.linkedin.com/in/devmuniz)
+- **Hugging Face:** [https://huggingface.co/manu02](https://huggingface.co/manu02)
+- **Portfolio:** [https://devmuniz02.github.io/](https://devmuniz02.github.io/)
+
+Project Link: [https://github.com/devMuniz02/Model-Quantization](https://github.com/devMuniz02/Model-Quantization)
+
+---
+
+⭐ If you find this project helpful, please give it a star!
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Repository Setup](#repository-setup)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Project Structure
+
+```
+Model-Quantization/
+├── assets/                 # Static assets (images, icons, etc.)
+├── data/                   # Data files and datasets
+│   └── quantized_models.json # JSON list of already quantized models
+├── docs/                   # Documentation files
+├── notebooks/              # Jupyter notebooks for analysis and prototyping
+│   ├── initial_test.ipynb  # Interactive quantization testing notebook
+│   ├── quant_scratch.ipynb # Scratch notebook for quantization experiments
+│   └── trendinghfmodels.ipynb # Analysis of trending Hugging Face models
+├── scripts/                # Utility scripts and automation tools
+│   └── auto_quantize_trending.py # Automated quantization of trending models
+├── src/                    # Source code
+│   └── quantize_terminal.py # Main terminal-based quantization script
+├── tests/                  # Unit tests and test files
+├── LICENSE                 # MIT License file
+├── README.md               # Project documentation
+└── requirements.txt        # Python dependencies
+```
+
+### Directory Descriptions
+
+- **`assets/`**: Store static files like images, icons, fonts, and other media assets.
+- **`data/`**: Place datasets, input files, and any data-related resources here. Contains `quantized_models.json` for tracking quantized models.
+- **`docs/`**: Additional documentation, guides, and project-related files.
+- **`notebooks/`**: Jupyter notebooks for data exploration, prototyping, and demonstrations.
+  - `initial_test.ipynb`: Interactive quantization testing notebook
+  - `trendinghfmodels.ipynb`: Analysis and exploration of trending Hugging Face models
+- **`scripts/`**: Utility scripts for automation, setup, deployment, or maintenance tasks. Includes `auto_quantize_trending.py` for automated quantization.
+- **`src/`**: Main source code for the project, including the quantization script.
+- **`tests/`**: Unit tests, integration tests, and test-related files.
+
+## ️ Configuration
 
 ### Quantization Parameters
 
@@ -209,7 +265,7 @@ The script automatically detects model types:
 - **System RAM**: Large models may require significant RAM during quantization
 - **Storage**: Quantized models are typically 60-75% smaller than originals
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -242,19 +298,3 @@ flake8 src/
 - Use type hints for function parameters and return values
 - Write docstrings for all functions and classes
 - Keep functions focused and modular
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-**Links:**
-- **GitHub:** [https://github.com/devMuniz02/](https://github.com/devMuniz02/)
-- **LinkedIn:** [https://www.linkedin.com/in/devmuniz](https://www.linkedin.com/in/devmuniz)
-- **Hugging Face:** [https://huggingface.co/manu02](https://huggingface.co/manu02)
-- **Portfolio:** [https://devmuniz02.github.io/](https://devmuniz02.github.io/)
-
-Project Link: [https://github.com/devMuniz02/Model-Quantization](https://github.com/devMuniz02/Model-Quantization)
-
----
-
-⭐ If you find this project helpful, please give it a star!
