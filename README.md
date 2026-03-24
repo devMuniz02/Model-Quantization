@@ -13,10 +13,15 @@
 
 Effortlessly quantize and deploy Hugging Face models. This repo provides a streamlined pipeline to convert any HF model into a compressed format and upload it directly to your HF profile. Ideal for optimizing Large Language Models (LLMs) for resource-constrained environments.
 
+![Model quantization workflow overview](assets/quantization-flow.png)
+
+Quantization workflow from source model to efficient deployment artifact.
+
 ## Repository Structure
 
 | Path | Description |
 | --- | --- |
+| `assets/` | Images, figures, or other supporting media used by the project. |
 | `notebooks/` | Exploratory notebooks and experiment walkthroughs. |
 | `scripts/` | Top-level project directory containing repository-specific resources. |
 | `src/` | Primary source code for the application or library. |
@@ -44,6 +49,11 @@ pip install -r requirements.txt
 3. Run or inspect the project entry point.
 
 Use the project-specific scripts or notebooks in the repository root to run the workflow.
+
+Generate the README visual:
+```bash
+python scripts/generate_readme_visual.py
+```
 
 ## Features
 
